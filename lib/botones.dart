@@ -1,69 +1,61 @@
 import 'package:flutter/material.dart';
 import 'package:testing_1/class_ii.dart';
 
-//Function botones
+//Function main
 void main() => runApp(btn());
 
-//Instancia btn
+//Intancia btn
 class btn extends StatelessWidget {
   const btn({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Class 03 Botones',
-      home: Botones(),
+      title: 'Funcion BTN',
+      home: Inicio(),
     );
   }
 }
 
-class Botones extends StatefulWidget {
-  const Botones({super.key});
+//Instancia Inicio Home
+class Inicio extends StatefulWidget {
+  const Inicio({super.key});
 
   @override
-  State<Botones> createState() => _BotonesState();
+  State<Inicio> createState() => _InicioState();
 }
 
-class _BotonesState extends State<Botones> {
+class _InicioState extends State<Inicio> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('Clase 03'),
+          child: Text('botones'),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.amberAccent,
         foregroundColor: Colors.white,
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
-            child: Image.network('https://plus.unsplash.com/premium_photo-1685793804465-b12bbd8b7281?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'),
+            child: Image.network("https://images.unsplash.com/photo-1475598322381-f1b499717dda?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"),
           ),
-
-          //BTN
           Container(
+            height: 70,
             child: ElevatedButton(
+              onPressed: (){},
               child: Row(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  Text('Hora ') ,
                   Icon(Icons.timer),
-                  SizedBox(width: 7,),
-                  Text('Hora')
                 ],
               ),
-              onPressed: (){
-                var time = DateTime.now();
-                print(time);
-              },
             ),
-            width: 150,
-            height: 80,
           ),
-
         ],
       ),
     );
   }
 }
-
